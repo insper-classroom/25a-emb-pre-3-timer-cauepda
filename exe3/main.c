@@ -10,7 +10,7 @@ volatile int flag_f_r = 0;
 volatile bool timer_fired = false;
 volatile bool action_completed = false;
 
-alarm_id_t alarm = 0;
+volatile alarm_id_t alarm = 0;
 
 int64_t alarm_callback(alarm_id_t id, void *user_data) {
     timer_fired = true;
