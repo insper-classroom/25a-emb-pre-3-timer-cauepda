@@ -7,7 +7,6 @@ const int LED_PIN_R = 4;
 
 volatile int flag_f_r = 0;
 volatile int g_timer_0 = 0;
-volatile bool blink_mode = false;
 
 void btn_callback(uint gpio, uint32_t events) {
     if (events == 0x4) { // fall edge
@@ -35,6 +34,7 @@ int main() {
 
     // Configura o timer para 2Hz (500ms)
     int timer_0_hz = 2;
+    bool blink_mode = false;
     repeating_timer_t timer_0;
 
     if (!add_repeating_timer_us(1000000 / timer_0_hz, 
